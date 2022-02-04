@@ -13,6 +13,10 @@ jobs:
     runs-on: ${{ matrix.config.os }}
 
     name: ${{ matrix.config.os }} (${{ matrix.config.r }})
+   
+    name: Install XQuartz on macOS
+        if: runner.os == 'macOS'
+        run: brew cask install xquartz 
 
     strategy:
       fail-fast: false
